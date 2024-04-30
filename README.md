@@ -176,6 +176,8 @@ service_cidr=10.96.0.0/12
 #cri_socket=unix:///var/run/crio/crio.sock
 cri_socket=unix:///run/containerd/containerd.sock
 #cri_socket=unix:///var/run/cri-dockerd.sock
+# cilium or calico
+cni_plugin=cilium
 ```
 
 Then run the `bootstrap.sh` script:
@@ -185,6 +187,8 @@ $ ./bootstrap.sh
 ```
 
 By default it will install `containerd` CRI but it also includes scripts for installing `cri-o` and `docker` (just uncommment the appropriate `cri_socket` variable in the `hosts.ini` script).
+
+It also uses the `cilium` CNI by default but you can change it to `calico` if you like.
 
 ## Access the Cluster Locally
 
